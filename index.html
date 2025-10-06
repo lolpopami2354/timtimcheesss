@@ -14,6 +14,9 @@
       background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
       animation: spaceDrift 60s linear infinite;
       color: #00ffe7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     @keyframes spaceDrift {
@@ -21,30 +24,40 @@
       to { background-position: 10000px 10000px; }
     }
 
+    .hidden {
+      display: none;
+    }
+
     .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
+      text-align: center;
+      padding: 40px;
     }
 
     h1 {
+      font-size: 2.5em;
+      text-shadow: 0 0 15px #00ffe7;
+      margin-bottom: 20px;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 6px;
+      border: none;
+      background-color: #111;
+      color: #00ffe7;
+      box-shadow: 0 0 10px #00ffe7;
       margin-bottom: 10px;
-      font-size: 2em;
-      text-align: center;
-      text-shadow: 0 0 10px #00ffe7;
     }
 
     button {
-      padding: 15px 30px;
+      padding: 10px 20px;
       font-size: 18px;
       background-color: #00ffe7;
       color: #000;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-bottom: 30px;
       box-shadow: 0 0 10px #00ffe7;
     }
 
@@ -52,50 +65,42 @@
       background-color: #00bfa5;
     }
 
-    #backButton {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #222;
-      color: #00ffe7;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+    #errorMessage {
+      color: red;
+      margin-top: 10px;
       display: none;
-      box-shadow: 0 0 10px #00ffe7;
-    }
-
-    #backButton:hover {
-      background-color: #111;
-    }
-
-    iframe {
-      width: 1200px;
-      max-width: 100%;
-      height: 600px;
-      border: 2px solid #00ffe7;
-      border-radius: 10px;
-      box-shadow: 0 0 20px #00ffe7;
-      display: none;
-    }
-
-    img.gif {
-      margin-bottom: 30px;
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 0 20px #00ffe7;
     }
   </style>
 </head>
 <body>
-  <link rel="shortcut icon" type="image/x-icon" href="bubbasgramamaa.png" />
-  <center>
-    <p> <p>
-    <hr>
-    <h1>wellcome Tim</h1>
+  <div id="passwordScreen" class="container">
+    <h1>🔐 Enter Access Code</h1>
+    <input type="password" id="passwordInput" placeholder="Enter password...">
+    <br>
+    <button onclick="checkPassword()">Unlock</button>
+    <p id="errorMessage">❌ Incorrect password. Try again.</p>
+  </div>
 
-    
+  <div id="mainContent" class="container hidden">
+    <hr>
+    <h1>👋 Welcome, Tim, to Bubba's Gramama 🚀</h1>
+    <!-- Add more content here -->
+  </div>
+
+  <script>
+    const correctPassword = "spaceportal42"; // 🔑 Set your password here
+
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      const error = document.getElementById("errorMessage");
+
+      if (input === correctPassword) {
+        document.getElementById("passwordScreen").classList.add("hidden");
+        document.getElementById("mainContent").classList.remove("hidden");
+      } else {
+        error.style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>
