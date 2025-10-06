@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bubba's Gramama</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(black, #0b0033);
+      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+      animation: spaceDrift 60s linear infinite;
+      color: #00ffe7;
+    }
+
+    @keyframes spaceDrift {
+      from { background-position: 0 0; }
+      to { background-position: 10000px 10000px; }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2em;
+      text-align: center;
+      text-shadow: 0 0 10px #00ffe7;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #00ffe7;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px #00ffe7;
+    }
+
+    button:hover {
+      background-color: #00bfa5;
+    }
+
+    #backButton {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #222;
+      color: #00ffe7;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 0 10px #00ffe7;
+    }
+
+    #backButton:hover {
+      background-color: #111;
+    }
+
+    iframe {
+      width: 1200px;
+      max-width: 100%;
+      height: 600px;
+      border: 2px solid #00ffe7;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ffe7;
+      display: none;
+    }
+
+    img.gif {
+      margin-bottom: 30px;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ffe7;
+    }
+  </style>
+</head>
+<body>
+  <link rel="shortcut icon" type="image/x-icon" href="bubbasgramamaa.png" />
