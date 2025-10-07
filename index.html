@@ -2,98 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Bubba's Gramama</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <title>Access Portal</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
+      background: radial-gradient(circle at center, #0f0f0f, #000000);
+      color: #00ffcc;
       font-family: 'Orbitron', sans-serif;
-      min-height: 100vh;
-      background: linear-gradient(black, #0b0033);
-      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-      animation: spaceDrift 60s linear infinite;
-      color: #00ffe7;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    @keyframes spaceDrift {
-      from { background-position: 0 0; }
-      to { background-position: 10000px 10000px; }
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .container {
       text-align: center;
-      padding: 40px;
+      padding-top: 100px;
     }
-
-    h1 {
-      font-size: 2.5em;
-      text-shadow: 0 0 15px #00ffe7;
-      margin-bottom: 20px;
-    }
-
     input[type="password"] {
       padding: 10px;
       font-size: 18px;
-      border-radius: 6px;
-      border: none;
       background-color: #111;
-      color: #00ffe7;
-      box-shadow: 0 0 10px #00ffe7;
-      margin-bottom: 10px;
+      color: #00ffcc;
+      border: 2px solid #00ffcc;
+      border-radius: 5px;
     }
-
     button {
+      margin-top: 20px;
       padding: 10px 20px;
       font-size: 18px;
-      background-color: #00ffe7;
+      background-color: #00ffcc;
       color: #000;
       border: none;
-      border-radius: 6px;
+      border-radius: 5px;
       cursor: pointer;
-      box-shadow: 0 0 10px #00ffe7;
+      display: none;
     }
-
-    button:hover {
-      background-color: #00bfa5;
+    h1 {
+      font-size: 36px;
+      margin-bottom: 40px;
     }
   </style>
 </head>
 <body>
-  <div id="passwordScreen" class="container">
-    <h1>🔐 Enter Access Code</h1>
-    <input type="password" id="passwordInput" placeholder="Enter password...">
-    <br>
-    <button onclick="checkPassword()">Unlock</button>
-  </div>
-
-  <div id="mainContent" class="container hidden">
-    <hr>
-    <h1>👋 Welcome, Tim, to Bubba's Gramama 🚀</h1>
-    <!-- Add more content here -->
-  </div>
+  <h1>🔐 Enter Access Code</h1>
+  <input type="password" id="passwordInput" placeholder="Enter password">
+  <button id="launchButton">Lunch tims world</button>
 
   <script>
-    const correctPassword = "wallywaldo101"; // 🔑 Set your password here
+    const correctPassword = "wallywoldo101"; // You can change this
+    const passwordInput = document.getElementById("passwordInput");
+    const launchButton = document.getElementById("launchButton");
 
-    function checkPassword() {
-      const input = document.getElementById("passwordInput").value;
-
-      if (input === correctPassword) {
-        document.getElementById("passwordScreen").classList.add("hidden");
-        document.getElementById("mainContent").classList.remove("hidden");
+    passwordInput.addEventListener("input", () => {
+      if (passwordInput.value === correctPassword) {
+        launchButton.style.display = "inline-block";
       } else {
-        // Attempt to redirect to about:blank
-        window.location.href = "about:blank";
+        launchButton.style.display = "none";
       }
-    }
+    });
   </script>
 </body>
 </html>
