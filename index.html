@@ -2,69 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Access Portal</title>
+  <title>Spacey Lunch Portal</title>
   <style>
     body {
-      background: radial-gradient(circle at center, #0f0f0f, #000000);
-      color: #00ffcc;
+      background: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
       font-family: 'Orbitron', sans-serif;
       text-align: center;
       padding-top: 100px;
     }
     input[type="password"] {
       padding: 10px;
-      font-size: 18px;
-      background-color: #111;
-      color: #00ffcc;
-      border: 2px solid #00ffcc;
+      font-size: 16px;
       border-radius: 5px;
+      border: none;
     }
     button {
       margin-top: 20px;
       padding: 10px 20px;
       font-size: 18px;
-      background-color: #00ffcc;
-      color: #000;
       border: none;
       border-radius: 5px;
+      background-color: #00ffcc;
+      color: black;
       cursor: pointer;
       display: none;
-    }
-    h1 {
-      font-size: 36px;
-      margin-bottom: 40px;
     }
   </style>
 </head>
 <body>
-  <h1>🔐 Enter Access Code</h1>
+  <h1>🚀 Welcome to the Spacey Lunch Portal 🚀</h1>
+  <p>Enter the secret password to unlock lunch:</p>
   <input type="password" id="passwordInput" placeholder="Enter password">
-  <button id="launchButton">Launch Tim’s World</button>
+  <button id="lunchButton">Lunch Tims World</button>
 
   <script>
-    const correctPassword = "wallywoldo101";
-    const passwordInput = document.getElementById("passwordInput");
-    const launchButton = document.getElementById("launchButton");
+    const correctPassword = "lunch123"; // You can change this
+    const input = document.getElementById("passwordInput");
+    const button = document.getElementById("lunchButton");
 
-    passwordInput.addEventListener("input", () => {
-      launchButton.style.display = passwordInput.value === correctPassword ? "inline-block" : "none";
-    });
-
-    launchButton.addEventListener("click", () => {
-      const win = window.open("", "_blank", "width=800,height=600");
-      const url = "https://lolpopami2354.github.io/test4/";
-      const iframe = win.document.createElement("iframe");
-      iframe.style.width = "100%";
-      iframe.style.height = "100%";
-      iframe.style.border = "none";
-      iframe.src = url;
-      win.document.body.style.margin = "0";
-      win.document.body.appendChild(iframe);
-
-      // Automatically close the launched site after 10 seconds
-      setTimeout(() => {
-        win.close();
-      }, 0); // 0 seconds
+    input.addEventListener("input", () => {
+      if (input.value === correctPassword) {
+        button.style.display = "inline-block";
+      } else {
+        button.style.display = "none";
+      }
     });
   </script>
 </body>
