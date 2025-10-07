@@ -55,17 +55,21 @@
     });
 
     launchButton.addEventListener("click", () => {
-      const win = window.open();
-      const url = "https://lolpopami2354.github.io/test4/";
-      const iframe = win.document.createElement("iframe");
-      iframe.style.width = "100%";
-      iframe.style.height = "100%";
-      iframe.style.border = "none";
-      iframe.src = url;
-      win.document.body.appendChild(iframe);
+  const win = window.open();
+  const url = "https://lolpopami2354.github.io/test4/";
+  const iframe = win.document.createElement("iframe");
+  iframe.style.width = "100%";
+  iframe.style.height = "100%";
+  iframe.style.border = "none";
+  iframe.src = url;
+  win.document.body.appendChild(iframe);
 
-      // Remove the button after launching
-      launchButton.remove();
+  // Automatically close the launched site after 10 seconds
+  setTimeout(() => {
+    win.close();
+  }, 10000); // 10000 milliseconds = 10 seconds
+});
+
     });
   </script>
 </body>
