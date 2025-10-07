@@ -39,7 +39,7 @@
 <body>
   <h1>🔐 Enter Access Code</h1>
   <input type="password" id="passwordInput" placeholder="Enter password">
-  <button id="launchButton">Lunch tims world</button>
+  <button id="launchButton">Launch Tim’s World</button>
 
   <script>
     const correctPassword = "wallywoldo101";
@@ -47,29 +47,24 @@
     const launchButton = document.getElementById("launchButton");
 
     passwordInput.addEventListener("input", () => {
-      if (passwordInput.value === correctPassword) {
-        launchButton.style.display = "inline-block";
-      } else {
-        launchButton.style.display = "none";
-      }
+      launchButton.style.display = passwordInput.value === correctPassword ? "inline-block" : "none";
     });
 
     launchButton.addEventListener("click", () => {
-  const win = window.open();
-  const url = "https://lolpopami2354.github.io/test4/";
-  const iframe = win.document.createElement("iframe");
-  iframe.style.width = "100%";
-  iframe.style.height = "100%";
-  iframe.style.border = "none";
-  iframe.src = url;
-  win.document.body.appendChild(iframe);
+      const win = window.open("", "_blank", "width=800,height=600");
+      const url = "https://lolpopami2354.github.io/test4/";
+      const iframe = win.document.createElement("iframe");
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.border = "none";
+      iframe.src = url;
+      win.document.body.style.margin = "0";
+      win.document.body.appendChild(iframe);
 
-  // Automatically close the launched site after 10 seconds
-  setTimeout(() => {
-    win.close();
-  }, 10000); // 10000 milliseconds = 10 seconds
-});
-
+      // Automatically close the launched site after 10 seconds
+      setTimeout(() => {
+        win.close();
+      }, 0); // 0 seconds
     });
   </script>
 </body>
