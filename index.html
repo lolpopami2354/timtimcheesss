@@ -39,25 +39,10 @@
 <body>
   <h1>🔐 Enter Access Code</h1>
   <input type="password" id="passwordInput" placeholder="Enter password">
-  <button id="launchButton" onclick="openGame()">Lunch tims world</button>
+  <button id="launchButton">Lunch tims world</button>
 
   <script>
-    function openGame() {
-  var win = window.open();
-  var url = "https://lolpopami2354.github.io/test4/";
-  var iframe = win.document.createElement('iframe');
-  iframe.style.width = "100%";
-  iframe.style.height = "100%";
-  iframe.style.border = "none";
-  iframe.src = url;
-  win.document.body.appendChild(iframe);
-
-  // Delete the button after it's clicked
-  document.getElementById("launchButton").remove();
-    }
-
-    }
-    const correctPassword = "wallywoldo101"; // You can change this
+    const correctPassword = "wallywoldo101";
     const passwordInput = document.getElementById("passwordInput");
     const launchButton = document.getElementById("launchButton");
 
@@ -67,6 +52,20 @@
       } else {
         launchButton.style.display = "none";
       }
+    });
+
+    launchButton.addEventListener("click", () => {
+      const win = window.open();
+      const url = "https://lolpopami.github.io/test4/";
+      const iframe = win.document.createElement("iframe");
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.border = "none";
+      iframe.src = url;
+      win.document.body.appendChild(iframe);
+
+      // Remove the button after launching
+      launchButton.remove();
     });
   </script>
 </body>
