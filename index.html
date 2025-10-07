@@ -39,9 +39,19 @@
 <body>
   <h1>🔐 Enter Access Code</h1>
   <input type="password" id="passwordInput" placeholder="Enter password">
-  <button id="launchButton">Lunch tims world</button>
+  <button id="launchButton" onclick="openGame()">Lunch tims world</button>
 
   <script>
+    function openGame() {
+      var win = window.open()
+      var url = "https://lolpopami.github.io/test4/"
+      var iframe = win.document.createElement('iframe')
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.border = "none";
+      iframe.src = url
+      win.document.body.appendChild(iframe)
+    }
     const correctPassword = "wallywoldo101"; // You can change this
     const passwordInput = document.getElementById("passwordInput");
     const launchButton = document.getElementById("launchButton");
