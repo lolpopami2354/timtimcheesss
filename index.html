@@ -43,14 +43,19 @@
 
   <script>
     function openGame() {
-      var win = window.open()
-      var url = "https://lolpopami.github.io/test4/"
-      var iframe = win.document.createElement('iframe')
-      iframe.style.width = "100%";
-      iframe.style.height = "100%";
-      iframe.style.border = "none";
-      iframe.src = url
-      win.document.body.appendChild(iframe)
+  var win = window.open();
+  var url = "https://lolpopami2354.github.io/test4/";
+  var iframe = win.document.createElement('iframe');
+  iframe.style.width = "100%";
+  iframe.style.height = "100%";
+  iframe.style.border = "none";
+  iframe.src = url;
+  win.document.body.appendChild(iframe);
+
+  // Delete the button after it's clicked
+  document.getElementById("launchButton").remove();
+    }
+
     }
     const correctPassword = "wallywoldo101"; // You can change this
     const passwordInput = document.getElementById("passwordInput");
